@@ -10,7 +10,7 @@ function App() {
   const [searchValue, setSearchValue] = useState<string>('');
 
   const fetchData = async () => {
-    const { data } = await axios.post(`http://localhost:3000/get-details`, {
+    const { data } = await axios.post(`https://autonomize-assignment.onrender.com/get-details`, {
       username: searchValue
     });
     setGitdata(data);
@@ -53,7 +53,7 @@ function App() {
       {
         gitdata?.length !== 0 && <Repos gitdata={gitdata} />
       }
-      
+
       <Routes>
         <Route path="/repo-details" element={<RepoDetails />} />
       </Routes>
