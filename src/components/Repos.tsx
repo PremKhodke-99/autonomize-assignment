@@ -17,13 +17,20 @@ const Repos = ({ gitdata }: any) => {
         getRepos();
     }, [])
 
+    const handleClick = (item: any) => {
+        navigate('/repo-details', {
+            state: { item }
+        })
+    }
+
+
     console.log(repos);
 
     return (
         <div className="grid-wrapper">
             {
                 repos?.length && repos.map((item: any) => (
-                    <div className="card">
+                    <div className="card" key={item.id} onClick={() => handleClick(item)}>
                         <h3>{item.name}</h3>
                         <p>{item?.description}</p>
                     </div>

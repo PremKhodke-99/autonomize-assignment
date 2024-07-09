@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react"
 import Repos from "./components/Repos";
+import { Route, Routes } from "react-router-dom";
+import RepoDetails from "./components/RepoDetails";
 
 function App() {
   const [gitdata, setGitdata] = useState([]);
@@ -48,10 +50,13 @@ function App() {
           <button className="button">Apply</button>
         </div>
       </div>
-
       {
         gitdata?.length !== 0 && <Repos gitdata={gitdata} />
       }
+      
+      <Routes>
+        <Route path="/repo-details" element={<RepoDetails />} />
+      </Routes>
 
     </div>
   )

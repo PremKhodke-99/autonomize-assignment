@@ -75,4 +75,9 @@ html {
 .card{
   padding: 20px ;
   background-color: rgb(247, 247, 243);
+  cursor: pointer;
+}
+
+.details{
+  padding: 20px;
 }
