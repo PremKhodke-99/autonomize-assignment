@@ -2,6 +2,21 @@ const { default: axios } = require("axios");
 const GitModel = require("../model/git.model");
 
 /**
+ * Method to fetch all data from db
+ * @param {*} req 
+ * @param {*} res 
+ */
+const getAllDetails = async (req, res) => {
+    try {
+        const data = await GitModel.find();
+        res.status(200).send(data);
+    } catch (error) {
+        console.log(error);
+        res.send("error", error.message)
+    }
+}
+
+/**
  * 
  * @param {*} req 
  * @param {*} res 
@@ -155,5 +170,6 @@ module.exports = {
     findData,
     deleteData,
     updateData,
-    sortData
+    sortData,
+    getAllDetails
 }

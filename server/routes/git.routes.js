@@ -1,6 +1,7 @@
-const { getDetails, findData, deleteData, updateData, sortData } = require("../controller/git.controller");
+const { getDetails, findData, deleteData, updateData, sortData, getAllDetails } = require("../controller/git.controller");
 const router = require("express").Router();
 
+router.get('/', getAllDetails);
 router.post('/get-details', getDetails);
 router.get('/find-users', findData);
 router.get('/sort-user', sortData);
