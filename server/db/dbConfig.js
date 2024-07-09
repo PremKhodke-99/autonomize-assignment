@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dbConnect = async () => {
-    const MongoDb_URI = "mongodb://localhost:27017/autonomize";
+    const MongoDb_URI = process.env.MONGODB_URI;
     mongoose.connect(MongoDb_URI)
         .then(() => console.log("Database Connected"))
         .catch(() => console.error("Database connection failed"));
