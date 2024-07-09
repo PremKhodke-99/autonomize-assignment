@@ -4,20 +4,20 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // }
 
-// const initialState: GitState = {
-
-// }
-
+const initialState = {
+    data: [],
+    sort: "",
+}
 
 export const gitSlice = createSlice({
-    name: "okname",
-    initialState : [],
+    name: "root",
+    initialState,
     reducers: {
-        fn: (state, action: PayloadAction) => {
+        get: (state, action: PayloadAction) => {
 
         }
     }
 });
 
+export const { get } = gitSlice.actions;
 export default gitSlice.reducer;
-export const { fn } = gitSlice.actions;
