@@ -12,7 +12,7 @@ const getAllDetails = async (req, res) => {
         res.status(200).send(data);
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
@@ -45,7 +45,7 @@ const getDetails = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
@@ -75,7 +75,7 @@ const findData = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
@@ -101,7 +101,7 @@ const updateData = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
@@ -117,7 +117,7 @@ const deleteData = async (req, res) => {
         res.status(201).send("Deleted")
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
@@ -161,7 +161,7 @@ const sortData = async (req, res) => {
         res.status(200).send(sortedUser)
     } catch (error) {
         console.log(error);
-        res.send("error", error.message)
+        res.send(error.message)
     }
 }
 
